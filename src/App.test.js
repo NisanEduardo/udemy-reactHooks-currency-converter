@@ -3,6 +3,6 @@ import App from "./App";
 
 test("renders converter main component", () => {
   render(<App />);
-  const mainComponentText = screen.getByText(/main component/i);
+  const mainComponentText = screen.getByText(/conversor/i);
   expect(mainComponentText).toBeInTheDocument();
 });
