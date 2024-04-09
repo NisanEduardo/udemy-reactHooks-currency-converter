@@ -2,8 +2,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import { CurrencyList } from "../currencyList/CurrencyList";
+import { useState } from "react";
 
 export const Converter = () => {
+  const [currencyValue, setCurrencyValue] = useState(1);
+  const [currentFrom, setCurrentFrom] = useState("BRL");
+  const [currentTo, setCurrentTo] = useState("USD");
+
+  const handleCurrencyValue = (event) => {
+    setCurrencyValue(event.target.value.replace(/\D/g, ""));
+  };
+
+  const handleCurrentFrom = (event) => {
+    setCurrentFrom(event.target.value);
+  };
+
+  const handleCurrentTo = (event) => {
+    setCurrentFrom(event.target.value);
+  };
+
   return (
     <div className="bg-gray-200 border border-gray-300 px-5 py-10">
       <form action="">
@@ -14,10 +31,16 @@ export const Converter = () => {
               type="text"
               name=""
               id=""
-              value={1}
+              value={currencyValue}
+              onChange={handleCurrencyValue}
               placeholder="0"
             />
-            <select className="flex rounded-md p-1" name="" id="">
+            <select
+              className="flex rounded-md p-1"
+              value={currentFrom}
+              name=""
+              id=""
+            >
               <CurrencyList />
             </select>
           </div>
@@ -27,7 +50,12 @@ export const Converter = () => {
             </span>
           </div>
           <div>
-            <select className="flex rounded-md p-1" name="" id="">
+            <select
+              className="flex rounded-md p-1"
+              value={currentTo}
+              name=""
+              id=""
+            >
               <CurrencyList />
             </select>
           </div>
