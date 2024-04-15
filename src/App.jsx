@@ -3,7 +3,7 @@ import { Converter } from "./components/converter/converter";
 
 function App() {
   return (
-    <div >
+    <div>
       {/* Alert */}
       <section>Erro obtendo dados de conversão, tente novamente</section>
       <header className="py-6 px-5">
@@ -12,16 +12,6 @@ function App() {
       <main>
         <Converter />
       </main>
-      {/* Modal */}
-      <section>
-        <header>
-          <h3>Conversão</h3>
-        </header>
-        <div>Resultado da conversão aqui</div>
-        <footer>
-          <button>Nova conversão</button>
-        </footer>
-      </section>
     </div>
   );
 }
