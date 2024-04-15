@@ -118,6 +118,7 @@ export const Converter = () => {
       </div>
       {/* Modal */}
       <section
+        data-testId="modal"
         className={`${
           showModal ? "flex" : "hidden"
         } items-center justify-center absolute left-0 top-0 w-[100%] h-[100%] bg-[rgba(0,0,0,0.6)]`}
